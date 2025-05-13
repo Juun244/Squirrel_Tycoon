@@ -4,24 +4,27 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     public Tilemap tilemap;
-
     public TileBase groundTile;
     public TileBase forestTile;
     public TileBase mountainTile;
     public TileBase lakeTile;
 
-    public int width = 200;   // 가로 크기
-    public int height = 200;  // 세로 크기
-    public float scale = 0.1f; // 노이즈 스케일
-
-    public int safeZoneRadius = 5; // 시작지점 안전 구역 (5칸 반지름)
+    public int width = 1000;   // 맵 크기: 1000x1000
+    public int height = 1000;  // 맵 크기: 1000x1000
+    public float scale = 0.01f; // 지형 노이즈 스케일
+    public float lakeNoiseScale = 0.02f; // 강 노이즈 스케일 (1000x1000에 맞게 축소)
+    public float lakeNoiseMin = 0.5f; // 강 생성 범위 하한 (확대)
+    public float lakeNoiseMax = 0.8f; // 강 생성 범위 상한 (확대)
+    public int safeZoneRadius = 50; // 시작지점 안전 구역 (5m 반경)
+    public int chunkSize = 100; // 청크 크기
 
     private int seed;
+    private int lakeTileCount = 0; // 디버깅용: 강 타일 수 카운트
 
     private void Start()
     {
         GenerateSeed();
-        GenerateMap();
+        GenerateMap(); // 맵 전체를 청크 단위로 한 번 생성
     }
 
     void GenerateSeed()
@@ -31,31 +34,66 @@ public class MapGenerator : MonoBehaviour
 
     void GenerateMap()
     {
-        tilemap.ClearAllTiles();
+        lakeTileCount = 0; // 카운터 초기화
 
-        for (int x = -width / 2; x < width / 2; x++)
+        // 전체 맵을 청크 단위로 생성
+        for (int chunkX = -width / 2; chunkX < width / 2; chunkX += chunkSize)
         {
-            for (int y = -height / 2; y < height / 2; y++)
+            for (int chunkY = -height / 2; chunkY < height / 2; chunkY += chunkSize)
+            {
+                GenerateChunk(chunkX, chunkY);
+            }
+        }
+
+        Debug.Log($"Total lake tiles generated: {lakeTileCount}");
+        if (lakeTileCount == 0)
+        {
+            Debug.LogWarning("No lake tiles were generated! Check lakeNoiseScale, lakeNoiseMin, lakeNoiseMax, or safe zone settings.");
+        }
+    }
+
+    void GenerateChunk(int startX, int startY)
+    {
+        int endX = Mathf.Min(startX + chunkSize, width / 2);
+        int endY = Mathf.Min(startY + chunkSize, height / 2);
+
+        Vector3Int[] tilePositions = new Vector3Int[(endX - startX) * (endY - startY)];
+        TileBase[] tiles = new TileBase[tilePositions.Length];
+        int index = 0;
+
+        for (int x = startX; x < endX; x++)
+        {
+            for (int y = startY; y < endY; y++)
             {
                 float xCoord = (x + width / 2 + seed) * scale;
                 float yCoord = (y + height / 2 + seed) * scale;
-
                 float noiseValue = Mathf.PerlinNoise(xCoord, yCoord);
 
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
+                tilePositions[index] = tilePosition;
 
-                // 시작 지점 반경 safeZoneRadius 이내는 무조건 Ground
                 if (IsInsideSafeZone(x, y, safeZoneRadius))
                 {
-                    tilemap.SetTile(tilePosition, groundTile);
+                    tiles[index] = groundTile;
                 }
                 else
                 {
-                    TileBase selectedTile = SelectTileBasedOnNoise(noiseValue, x, y);
-                    tilemap.SetTile(tilePosition, selectedTile);
+                    tiles[index] = SelectTileBasedOnNoise(noiseValue, x, y);
+                    if (tiles[index] == lakeTile)
+                    {
+                        lakeTileCount++;
+                        if (lakeTileCount <= 20) // 처음 20개 타일만 로그 출력
+                        {
+                            Debug.Log($"Lake tile placed at position ({x}, {y})");
+                        }
+                    }
                 }
+
+                index++;
             }
         }
+
+        tilemap.SetTiles(tilePositions, tiles);
     }
 
     bool IsInsideSafeZone(int x, int y, int radius)
@@ -65,7 +103,6 @@ public class MapGenerator : MonoBehaviour
 
     TileBase SelectTileBasedOnNoise(float noiseValue, int x, int y)
     {
-        // 강(Lake) 먼저 강제 배치
         if (IsLakeZone(x, y))
         {
             return lakeTile;
@@ -87,11 +124,13 @@ public class MapGenerator : MonoBehaviour
 
     bool IsLakeZone(int x, int y)
     {
-        // 강은 x축 기준으로 생성하되, 중앙 안전지대 반경 10칸 이내는 피한다
-        if (Mathf.Abs(x) < 10 && Mathf.Abs(y) < 10)
+        // 중앙 안전지대 반경 50칸 이내는 강 생성 안 함
+        if (Mathf.Abs(x) < 50 && Mathf.Abs(y) < 50)
             return false;
 
-        float lakeNoise = Mathf.PerlinNoise((x + width / 2 + seed) * 0.05f, (y + height / 2 + seed) * 0.05f);
-        return lakeNoise > 0.55f && lakeNoise < 0.65f; // 특정 값대만 강으로 만들어서 길게 이어지게
+        float lakeNoise = Mathf.PerlinNoise((x + width / 2 + seed) * lakeNoiseScale, (y + height / 2 + seed) * lakeNoiseScale);
+        bool isLake = lakeNoise >= lakeNoiseMin && lakeNoise <= lakeNoiseMax;
+
+        return isLake;
     }
 }
