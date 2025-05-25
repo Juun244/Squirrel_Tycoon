@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\Sprites\Forest\BushRuleTile.cs" />
+    <Compile Include="Assets\MapGenerator1.cs" />
     <Compile Include="Assets\NoiseMapGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

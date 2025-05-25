@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 07854311d1647894281deaba970a6979
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bushTile: {fileID: 11400000, guid: 0d627af3636e2a647a6a6216adacaf3e, type: 2}
+  - groundTilemap: {instanceID: 0}
+  - bushTilemap: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

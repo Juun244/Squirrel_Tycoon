@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 39006788fb275354aa34388ede9de9fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_DefaultSprite: {fileID: 21300000, guid: 0fabd3020fa124240b2f7cab858081b2, type: 3}
+  - m_DefaultGameObject: {instanceID: 0}
+  - n: {fileID: 21300000, guid: 41ce62db48cbf4e41b92d42f9f11a549, type: 3}
+  - s: {fileID: 21300000, guid: f5e0e2bda2e59514fba5a5d45678a087, type: 3}
+  - e: {fileID: 21300000, guid: 329cae190c727574aa0d941f0d2aa9f9, type: 3}
+  - w: {fileID: 21300000, guid: ce2290590c3b30f4abc878b8b5452b91, type: 3}
+  - nw: {fileID: 21300000, guid: fa7bf060e6e2c834c95bbd9b9c4723aa, type: 3}
+  - ne: {fileID: 21300000, guid: e2454c03b19a0d2458dca0bc664ea438, type: 3}
+  - sw: {fileID: 21300000, guid: 24fc1b43ccccc8b48afa6a61a3859950, type: 3}
+  - se: {fileID: 21300000, guid: d026b9c682bfeae4e81c96fdaad5982c, type: 3}
+  - centerPlain: {fileID: 21300000, guid: d557079d798037c448ee202242b4e31e, type: 3}
+  - defaultSprite: {fileID: 21300000, guid: 0fabd3020fa124240b2f7cab858081b2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
