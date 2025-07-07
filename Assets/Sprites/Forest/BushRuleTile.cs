@@ -13,6 +13,8 @@ public class BushRuleTile : RuleTile<BushRuleTile.Neighbor>
     // 방향별 스프라이트
     public Sprite n, s, e, w;
     public Sprite nw, ne, sw, se;
+    public Sprite cnw, cne, csw, cse;
+    public Sprite cnwse, cnesw;
     public Sprite centerPlain;
     public Sprite defaultSprite;
 
@@ -80,7 +82,31 @@ public class BushRuleTile : RuleTile<BushRuleTile.Neighbor>
         {
             tileData.sprite = centerPlain;
         }
-        //꺾인 곳 추가 필요, 현재는 사각형 Bush만 생성 가능
+        //커브
+        else if (hasN && hasS && hasE && hasW && hasNE && !hasNW && hasSE && hasSW)
+        {
+            tileData.sprite = cnw;
+        }
+        else if (hasN && hasS && hasE && hasW && !hasNE && hasNW && hasSE && hasSW)
+        {
+            tileData.sprite = cne;
+        }
+        else if (hasN && hasS && hasE && hasW && hasNE && hasNW && hasSE && !hasSW)
+        {
+            tileData.sprite = csw;
+        }
+        else if (hasN && hasS && hasE && hasW && hasNE && hasNW && !hasSE && hasSW)
+        {
+            tileData.sprite = cse;
+        }
+        else if (hasN && hasS && hasE && hasW && hasNE && !hasNW && !hasSE && hasSW)
+        {
+            tileData.sprite = cnwse;
+        }
+        else if (hasN && hasS && hasE && hasW && !hasNE && hasNW && hasSE && !hasSW)
+        {
+            tileData.sprite = cnesw;
+        }
         else
         {
             tileData.sprite = defaultSprite;

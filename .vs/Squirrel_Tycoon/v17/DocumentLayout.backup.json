@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Assets\\MapGenerator1.cs",
               "ToolTip": "D:\\Unity\\Squirrel_Tycoon\\Assets\\MapGenerator1.cs",
               "RelativeToolTip": "Assets\\MapGenerator1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAiwFYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T09:23:14.206Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Assets\\Sprites\\Forest\\BushRuleTile.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAFMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T08:58:18.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T08:58:18.493Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Assets\\NoiseMapGenerator.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAkwHYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T11:16:41.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T11:16:41.524Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Assets\\Player.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T11:03:04.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T11:03:04.465Z"
             }
           ]
         }

@@ -24,5 +24,11 @@ MonoBehaviour:
   ne: {fileID: 21300000, guid: e2454c03b19a0d2458dca0bc664ea438, type: 3}
   sw: {fileID: 21300000, guid: 24fc1b43ccccc8b48afa6a61a3859950, type: 3}
   se: {fileID: 21300000, guid: d026b9c682bfeae4e81c96fdaad5982c, type: 3}
+  cnw: {fileID: 21300000, guid: 58cdacdf1339cbc408696d016a472c1d, type: 3}
+  cne: {fileID: 21300000, guid: d65fc420962cf794a802ad1418ea0d0e, type: 3}
+  csw: {fileID: 21300000, guid: 2e4398d548909594b8a5dfe40e51740f, type: 3}
+  cse: {fileID: 21300000, guid: c9f42574f0fbd264e84fd8f22f20a109, type: 3}
+  cnwse: {fileID: 21300000, guid: 14b9168e70197b942b1147f157ca0f6b, type: 3}
+  cnesw: {fileID: 21300000, guid: 3c6d25e9c39924f418f345aac27c5915, type: 3}
   centerPlain: {fileID: 21300000, guid: d557079d798037c448ee202242b4e31e, type: 3}
   defaultSprite: {fileID: 21300000, guid: 0fabd3020fa124240b2f7cab858081b2, type: 3}
