@@ -1,115 +1,91 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Collections.Generic;
 
 public class MapGenerator1 : MonoBehaviour
 {
-    public int seed = 1234;
-    public TileBase[] groundTiles;
-    public TileBase bushTile;
-    public Tilemap groundTilemap;
-    public Tilemap bushTilemap;
+    [Header("General")]
+    [SerializeField] private int seed = 1234;
+
+    [Header("Ground")]
+    [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private TileBase[] groundTiles; // 1~5번 타일
+
+    [Header("Bush")]
+    [SerializeField] private Tilemap bushTilemap;
+    [SerializeField] private RuleTile bushTile;
+    [SerializeField] private int bushCount = 300;
+    [SerializeField] private Vector2Int bushMinSize = new Vector2Int(3, 2);
+    [SerializeField] private Vector2Int bushMaxSize = new Vector2Int(8, 6);
+
+    private const int MAP_MIN = -500;
+    private const int MAP_MAX = 500;
+
+    private HashSet<Vector2Int> occupied = new HashSet<Vector2Int>();
 
     void Start()
     {
-        GenerateMap();
+        Random.InitState(seed);
+        GenerateGround();
+        GenerateBushes();
     }
 
-    void Update()
+    void GenerateGround()
     {
-
-    }
-
-    void GenerateBushes(System.Random rand)
-    {
-        int bushCount = 100;
-
-        for (int i = 0; i < bushCount; i++)
+        for (int x = MAP_MIN; x <= MAP_MAX; x++)
         {
-            int centerX = rand.Next(-450, 450);
-            int centerY = rand.Next(-450, 450);
-
-            int width = rand.Next(10, 101);
-            int height = rand.Next(10, 101);
-            int pattern = rand.Next(0, 3);
-
-            switch (pattern)
+            for (int y = MAP_MIN; y <= MAP_MAX; y++)
             {
-                case 0:
-                    for (int x = -width / 2; x <= width / 2; x++)
-                    {
-                        for (int y = -height / 2; y <= height / 2; y++)
-                        {
-                            Vector3Int pos = new Vector3Int(centerX + x, centerY + y, 0);
-                            bushTilemap.SetTile(pos, bushTile);
-                        }
-                    }
-                    break;
-
-                case 1:
-                    for (int x = 0; x <= width / 2; x++)
-                    {
-                        for (int y = 0; y <= height / 2; y++)
-                        {
-                            if (x < 3 && y < 3) continue;
-                            Vector3Int pos = new Vector3Int(centerX + x, centerY + y, 0);
-                            bushTilemap.SetTile(pos, bushTile);
-                        }
-                    }
-                    break;
-
-                case 2:
-                    for (int x = -width / 2; x <= 0; x++)
-                    {
-                        for (int y = 0; y <= height / 2; y++)
-                        {
-                            if (-x < 3 && y < 3) continue;
-                            Vector3Int pos = new Vector3Int(centerX + x, centerY + y, 0);
-                            bushTilemap.SetTile(pos, bushTile);
-                        }
-                    }
-                    break;
+                int index = Random.Range(0, groundTiles.Length);
+                groundTilemap.SetTile(new Vector3Int(x, y, 0), groundTiles[index]);
             }
         }
+    }
 
+    void GenerateBushes()
+    {
+        int placed = 0;
+        int maxTry = bushCount * 10;
+
+        for (int tryCount = 0; tryCount < maxTry && placed < bushCount; tryCount++)
+        {
+            int x = Random.Range(MAP_MIN, MAP_MAX);
+            int y = Random.Range(MAP_MIN, MAP_MAX);
+
+            int width = Random.Range(bushMinSize.x, bushMaxSize.x + 1);
+            int height = Random.Range(bushMinSize.y, bushMaxSize.y + 1);
+
+            Vector2Int start = new Vector2Int(x, y);
+            List<Vector2Int> area = new List<Vector2Int>();
+
+            bool overlaps = false;
+            for (int dx = 0; dx < width; dx++)
+            {
+                for (int dy = 0; dy < height; dy++)
+                {
+                    Vector2Int pos = new Vector2Int(x + dx, y + dy);
+                    if (occupied.Contains(pos))
+                    {
+                        overlaps = true;
+                        break;
+                    }
+                    area.Add(pos);
+                }
+                if (overlaps) break;
+            }
+
+            if (!overlaps)
+            {
+                foreach (var pos in area)
+                {
+                    bushTilemap.SetTile((Vector3Int)pos, bushTile);
+                    occupied.Add(pos);
+                }
+                placed++;
+            }
+        }
         bushTilemap.RefreshAllTiles();
-    }
 
-    public void GenerateMap()
-    {
-        System.Random rand = new System.Random(seed);
-        int halfSize = 500;
-
-        for (int x = -halfSize; x < halfSize; x++)
-        {
-            for (int y = -halfSize; y < halfSize; y++)
-            {
-                Vector3Int pos = new Vector3Int(x, y, 0);
-                float dist = Vector2.Distance(Vector2.zero, new Vector2(x, y));
-                float noise = (float)rand.NextDouble();
-                int groundType;
-
-                if (dist <= 100)
-                {
-                    if (noise < 0.2f) groundType = 0;
-                    else if (noise < 0.6f) groundType = 3;
-                    else groundType = 4;
-                }
-                else if (dist <= 300)
-                {
-                    if (noise < 0.3f) groundType = 0;
-                    else if (noise < 0.7f) groundType = 1;
-                    else groundType = 2;
-                }
-                else
-                {
-                    if (noise < 0.9f) groundType = 0;
-                    else groundType = 1;
-                }
-
-                groundTilemap.SetTile(pos, groundTiles[groundType]);
-            }
-        }
-
-        GenerateBushes(rand);
+        Debug.Log($"Placed {placed} bushes (requested: {bushCount})");
     }
 }

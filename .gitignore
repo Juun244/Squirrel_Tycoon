@@ -49,3 +49,52 @@ ehthumbs.db
 
 # Mac specific files
 .DS_Store
+
+# MonoDevelop / Visual Studio generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+
+# Logs
+Logs/
+
+# Crash Reports
+sysinfo.txt
+
+# Unity Addressables (optional)
+Assets/AddressableAssetsData/*/*.bin
+Assets/StreamingAssets/aa/
+
+# Local cache for Unity Cloud
+.cloud/
+
+# JetBrains Rider IDE additional
+*.sln.iml
+
+# LFS pointer files
+*.lfs*
+
+# Package manager caches (sometimes appears)
+Packages/manifest.json.lock
+
+# Builds by Unity (macOS / Linux naming)
+[Bb]uilds*/ 
+[Bb]uild*/ 
+
+# Unity-generated native plugin meta
+*.apk
+*.aab
+*.xcuserstate
+*.xcworkspace
+
+# Unity Collaborate snapshot
+.CollabIgnore
+

@@ -35,44 +35,52 @@ public class BushRuleTile : RuleTile<BushRuleTile.Neighbor>
         bool hasSE = tilemap.GetTile(position + new Vector3Int(1, -1, 0)) is BushRuleTile;
         bool hasSW = tilemap.GetTile(position + new Vector3Int(-1, -1, 0)) is BushRuleTile;
 
-        // 조건 우선순위대로 검사
-
+        //상단 왼쪽
         if (!hasN && !hasW && !hasNW)
         {
             tileData.sprite = nw;
         }
+        //상단 오른쪽
         else if (!hasN && !hasE && !hasNE)
         {
             tileData.sprite = ne;
         }
+        //하단 왼쪽
         else if (!hasS && !hasW && !hasSW)
         {
             tileData.sprite = sw;
         }
+        //하단 오른쪽
         else if (!hasS && !hasE && !hasSE)
         {
             tileData.sprite = se;
         }
+        //상단
         else if (!hasN)
         {
             tileData.sprite = n;
         }
+        //하단
         else if (!hasS)
         {
             tileData.sprite = s;
         }
+        //오른쪽
         else if (!hasE)
         {
             tileData.sprite = e;
         }
+        //왼쪽
         else if (!hasW)
         {
             tileData.sprite = w;
         }
+        //가운데
         else if (hasN && hasS && hasE && hasW && hasNE && hasNW && hasSE && hasSW)
         {
             tileData.sprite = centerPlain;
         }
+        //꺾인 곳 추가 필요, 현재는 사각형 Bush만 생성 가능
         else
         {
             tileData.sprite = defaultSprite;
