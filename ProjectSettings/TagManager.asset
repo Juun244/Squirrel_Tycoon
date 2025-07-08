@@ -44,7 +44,7 @@ TagManager:
   - name: Tiles
     uniqueID: 898663053
     locked: 0
-  - name: Player
+  - name: Objects
     uniqueID: 4167677393
     locked: 0
   m_RenderingLayers:

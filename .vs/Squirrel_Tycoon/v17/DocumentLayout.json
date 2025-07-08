@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Unity\\Squirrel_Tycoon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\Squirrel_Tycoon\\Assets\\Sprites\\Forest\\BushRuleTile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Sprites\\Forest\\BushRuleTile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\Squirrel_Tycoon\\Assets\\Player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\Squirrel_Tycoon\\Assets\\SortingOrderByY.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\SortingOrderByY.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\Squirrel_Tycoon\\Assets\\Sprites\\Forest\\BushRuleTile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Sprites\\Forest\\BushRuleTile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\Squirrel_Tycoon\\Assets\\MapGenerator1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "SortingOrderByY.cs",
+              "DocumentMoniker": "D:\\Unity\\Squirrel_Tycoon\\Assets\\SortingOrderByY.cs",
+              "RelativeDocumentMoniker": "Assets\\SortingOrderByY.cs",
+              "ToolTip": "D:\\Unity\\Squirrel_Tycoon\\Assets\\SortingOrderByY.cs",
+              "RelativeToolTip": "Assets\\SortingOrderByY.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T08:35:51.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MapGenerator1.cs",
               "DocumentMoniker": "D:\\Unity\\Squirrel_Tycoon\\Assets\\MapGenerator1.cs",
               "RelativeDocumentMoniker": "Assets\\MapGenerator1.cs",
@@ -38,25 +55,22 @@
               "RelativeToolTip": "Assets\\MapGenerator1.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAiwFYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T09:23:14.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T09:23:14.206Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BushRuleTile.cs",
               "DocumentMoniker": "D:\\Unity\\Squirrel_Tycoon\\Assets\\Sprites\\Forest\\BushRuleTile.cs",
               "RelativeDocumentMoniker": "Assets\\Sprites\\Forest\\BushRuleTile.cs",
               "ToolTip": "D:\\Unity\\Squirrel_Tycoon\\Assets\\Sprites\\Forest\\BushRuleTile.cs",
               "RelativeToolTip": "Assets\\Sprites\\Forest\\BushRuleTile.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T08:58:18.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T08:58:18.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "NoiseMapGenerator.cs",
               "DocumentMoniker": "D:\\Unity\\Squirrel_Tycoon\\Assets\\NoiseMapGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\NoiseMapGenerator.cs",
@@ -68,13 +82,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Unity\\Squirrel_Tycoon\\Assets\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Player.cs",
               "ToolTip": "D:\\Unity\\Squirrel_Tycoon\\Assets\\Player.cs",
               "RelativeToolTip": "Assets\\Player.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwCYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T11:03:04.465Z",
               "EditorCaption": ""
