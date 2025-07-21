@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class MapGenerator : MonoBehaviour
@@ -9,22 +9,22 @@ public class MapGenerator : MonoBehaviour
     public TileBase mountainTile;
     public TileBase lakeTile;
 
-    public int width = 1000;   // ¸Ê Å©±â: 1000x1000
-    public int height = 1000;  // ¸Ê Å©±â: 1000x1000
-    public float scale = 0.01f; // ÁöÇü ³ëÀÌÁî ½ºÄÉÀÏ
-    public float lakeNoiseScale = 0.02f; // °­ ³ëÀÌÁî ½ºÄÉÀÏ (1000x1000¿¡ ¸Â°Ô Ãà¼Ò)
-    public float lakeNoiseMin = 0.5f; // °­ »ı¼º ¹üÀ§ ÇÏÇÑ (È®´ë)
-    public float lakeNoiseMax = 0.8f; // °­ »ı¼º ¹üÀ§ »óÇÑ (È®´ë)
-    public int safeZoneRadius = 50; // ½ÃÀÛÁöÁ¡ ¾ÈÀü ±¸¿ª (5m ¹İ°æ)
-    public int chunkSize = 100; // Ã»Å© Å©±â
+    public int width = 1000;   // ë§µ í¬ê¸°: 1000x1000
+    public int height = 1000;  // ë§µ í¬ê¸°: 1000x1000
+    public float scale = 0.01f; // ì§€í˜• ë…¸ì´ì¦ˆ ìŠ¤ì¼€ì¼
+    public float lakeNoiseScale = 0.02f; // ê°• ë…¸ì´ì¦ˆ ìŠ¤ì¼€ì¼ (1000x1000ì— ë§ê²Œ ì¶•ì†Œ)
+    public float lakeNoiseMin = 0.5f; // ê°• ìƒì„± ë²”ìœ„ í•˜í•œ (í™•ëŒ€)
+    public float lakeNoiseMax = 0.8f; // ê°• ìƒì„± ë²”ìœ„ ìƒí•œ (í™•ëŒ€)
+    public int safeZoneRadius = 50; // ì‹œì‘ì§€ì  ì•ˆì „ êµ¬ì—­ (5m ë°˜ê²½)
+    public int chunkSize = 100; // ì²­í¬ í¬ê¸°
 
     private int seed;
-    private int lakeTileCount = 0; // µğ¹ö±ë¿ë: °­ Å¸ÀÏ ¼ö Ä«¿îÆ®
+    private int lakeTileCount = 0; // ë””ë²„ê¹…ìš©: ê°• íƒ€ì¼ ìˆ˜ ì¹´ìš´íŠ¸
 
     private void Start()
     {
         GenerateSeed();
-        GenerateMap(); // ¸Ê ÀüÃ¼¸¦ Ã»Å© ´ÜÀ§·Î ÇÑ ¹ø »ı¼º
+        GenerateMap(); // ë§µ ì „ì²´ë¥¼ ì²­í¬ ë‹¨ìœ„ë¡œ í•œ ë²ˆ ìƒì„±
     }
 
     void GenerateSeed()
@@ -34,9 +34,9 @@ public class MapGenerator : MonoBehaviour
 
     void GenerateMap()
     {
-        lakeTileCount = 0; // Ä«¿îÅÍ ÃÊ±âÈ­
+        lakeTileCount = 0; // ì¹´ìš´í„° ì´ˆê¸°í™”
 
-        // ÀüÃ¼ ¸ÊÀ» Ã»Å© ´ÜÀ§·Î »ı¼º
+        // ì „ì²´ ë§µì„ ì²­í¬ ë‹¨ìœ„ë¡œ ìƒì„±
         for (int chunkX = -width / 2; chunkX < width / 2; chunkX += chunkSize)
         {
             for (int chunkY = -height / 2; chunkY < height / 2; chunkY += chunkSize)
@@ -82,7 +82,7 @@ public class MapGenerator : MonoBehaviour
                     if (tiles[index] == lakeTile)
                     {
                         lakeTileCount++;
-                        if (lakeTileCount <= 20) // Ã³À½ 20°³ Å¸ÀÏ¸¸ ·Î±× Ãâ·Â
+                        if (lakeTileCount <= 20) // ì²˜ìŒ 20ê°œ íƒ€ì¼ë§Œ ë¡œê·¸ ì¶œë ¥
                         {
                             Debug.Log($"Lake tile placed at position ({x}, {y})");
                         }
@@ -124,7 +124,7 @@ public class MapGenerator : MonoBehaviour
 
     bool IsLakeZone(int x, int y)
     {
-        // Áß¾Ó ¾ÈÀüÁö´ë ¹İ°æ 50Ä­ ÀÌ³»´Â °­ »ı¼º ¾È ÇÔ
+        // ì¤‘ì•™ ì•ˆì „ì§€ëŒ€ ë°˜ê²½ 50ì¹¸ ì´ë‚´ëŠ” ê°• ìƒì„± ì•ˆ í•¨
         if (Mathf.Abs(x) < 50 && Mathf.Abs(y) < 50)
             return false;
 
