@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Tree
+>>>>>>> 68a2037 (Initial commit with my changes)
   layers:
   - Default
   - TransparentFX
@@ -11,7 +16,11 @@ TagManager:
   - Player
   - Water
   - UI
+<<<<<<< HEAD
   - 
+=======
+  - Tree
+>>>>>>> 68a2037 (Initial commit with my changes)
   - 
   - 
   - 
