@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
         // 애니메이션 상태 업데이트
         bool isMoving = moveInput.magnitude > 0;
         animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveX", moveInput.x);
+        animator.SetFloat("moveY", moveInput.y);
 
         /*
         if (isNearTree && Input.GetKeyDown(KeyCode.F))
