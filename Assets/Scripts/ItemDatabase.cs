@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
+    #region Singleton
     public static ItemDatabase instance;
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class ItemDatabase : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
     public List<Item> itemDB = new List<Item>();
 
     public GameObject filedItemPrefab;

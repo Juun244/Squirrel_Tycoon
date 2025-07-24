@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Item item;
+    public Image itemImage;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateSlotUI()
     {
-        
+        itemImage.sprite = item.itemImage;
+        itemImage.gameObject.SetActive(true);
+    }
+    public void RemoveSlot()
+    {
+        item = null;
+        itemImage.gameObject.SetActive(false);
     }
 }
