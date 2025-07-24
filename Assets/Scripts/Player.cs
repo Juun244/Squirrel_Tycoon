@@ -11,20 +11,19 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     public TextMeshProUGUI climbHintText;
-    //private bool isNearTree = false;
+    private bool isNearTree = false;
 
     private Transform nearbyTree;
-    //public bool isClimbing { get; private set; }
+    public bool isClimbing { get; private set; }
 
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        //climbHintText.enabled = false;
+        climbHintText.enabled = false;
     }
 
-    /*
     IEnumerator ClimbTree(Vector3 startPos, float climbHeight, float duration)
     {
         isClimbing = true;
@@ -44,12 +43,13 @@ public class PlayerController : MonoBehaviour
         // 애니메이션 상태 초기화
         animator.SetBool("isMoving", false);
         isClimbing = false;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TreeScene");
     }
-    */
 
     void Update()
     {
-        //if (isClimbing) return;
+        if (isClimbing) return;
 
         // 상하 좌우 입력처리
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("moveX", moveInput.x);
         animator.SetFloat("moveY", moveInput.y);
 
-        /*
         if (isNearTree && Input.GetKeyDown(KeyCode.F))
         {
             if (nearbyTree != null)
@@ -82,16 +81,14 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("moveX", 0f);
                 animator.SetFloat("moveY", 1f);
 
-                StartCoroutine(ClimbTree(transform.position, 3.0f, 1.0f)); // 높이, 시간 조절 가능
+                StartCoroutine(ClimbTree(transform.position, 2.5f, 1.0f)); // 높이, 시간 조절 가능
             }
         }
-        */
     }
    
-
     void FixedUpdate()
     {
-        //if (isClimbing) return;
+        if (isClimbing) return;
         Move();
     }
 
@@ -99,7 +96,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
-    /*
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -120,7 +116,6 @@ public class PlayerController : MonoBehaviour
             nearbyTree = null;
         }
     }
-    */
 
 
 }

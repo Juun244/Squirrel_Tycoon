@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|d:\\users\\documents\\github\\squirrel_tycoon\\assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|d:\\users\\documents\\github\\squirrel_tycoon\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|d:\\users\\documents\\github\\squirrel_tycoon\\assets\\scripts\\sortingorderbyy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70B0AC2B-F3BD-07BF-30A8-40E27E787C4D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sortingorderbyy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,12 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory.cs",
+              "ToolTip": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAD4vx0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T17:12:49.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SortingOrderByY.cs",
+              "DocumentMoniker": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\SortingOrderByY.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SortingOrderByY.cs",
+              "ToolTip": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\SortingOrderByY.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SortingOrderByY.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T17:07:06.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
               "ToolTip": "D:\\Users\\Documents\\GitHub\\Squirrel_Tycoon\\Assets\\Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwDUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-24T13:18:24.062Z",
               "EditorCaption": ""
