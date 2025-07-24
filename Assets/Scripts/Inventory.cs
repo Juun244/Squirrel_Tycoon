@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnSlotCountChange(int val);
     public OnSlotCountChange onSlotCountChange;
+    List<Item> items = new List<Item>();
 
     //슬롯 수가 변경되면 자동으로 delegate 실행
     private int slotCnt;
@@ -38,8 +40,5 @@ public class Inventory : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        
-    }
+    
 }
