@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2996309768529995407}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  climbHintText: {fileID: 0}
 --- !u!50 &5099409499121724114
 Rigidbody2D:
   serializedVersion: 5
@@ -226,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d709b915bf3b3a4db15b26d1c227642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
 --- !u!1 &8907561447399509716
 GameObject:
   m_ObjectHideFlags: 0
