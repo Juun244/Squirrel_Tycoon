@@ -13,10 +13,6 @@ public class Item
     public ItemType itemType;
     public string itemName;
     public Sprite itemImage;
-
-    public bool Use(){
-        return false;
-    }
 }
 
 
