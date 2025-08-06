@@ -2,8 +2,23 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    #region Singleton
+    public static Player instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
     public float moveSpeed = 5f; // 이동 속도
     private Animator animator;
     private SpriteRenderer spriteRenderer;
